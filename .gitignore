@@ -1,0 +1,11 @@
+
+__pycache__/
+*.pyc
+.venv/
+.env
+.cache/
+models/
+checkpoints/
+*.bin
+*.safetensors
+index_store/
