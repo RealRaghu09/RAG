@@ -1,0 +1,5 @@
+FAISS is a library for efficient similarity search and clustering of dense vectors. Meta developed FAISS to support large-scale nearest neighbor problems in research and production.
+
+FAISS provides CPU and GPU implementations, product quantization, and several index types that trade accuracy for speed and memory. IndexFlatIP uses inner product; when embeddings are L2-normalized, cosine similarity is equivalent to inner product.
+
+When building a RAG pipeline, practitioners often embed documents offline, add vectors to a FAISS index, serialize the index to disk, and load it at query time for low-latency retrieval.

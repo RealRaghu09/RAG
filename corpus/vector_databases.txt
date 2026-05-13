@@ -1,0 +1,9 @@
+Vector databases are purpose-built systems for storing and retrieving vector embeddings using similarity search. They index high-dimensional vectors so applications can find nearest neighbors quickly at scale.
+
+Retrieval-augmented generation, often called RAG, combines a language model with a retrieval step over a knowledge base. The retriever fetches relevant passages or chunks, and the model conditions its answer on that context instead of relying on parametric memory alone.
+
+Pinecone is a managed vector database service. Teams use Pinecone when they want hosted infrastructure for approximate nearest neighbor search, metadata filtering, and operational simplicity without running their own ANN engine.
+
+Other popular options include Milvus, Weaviate, Qdrant, and Chroma. Each differs in deployment model, filtering capabilities, and how embeddings are stored and updated.
+
+In our sample inventory notes, the logistics team tracks two-wheel and four-wheel assets. The cars mentioned for the downtown fleet are a Toyota Prius and a Honda Civic. The bikes mentioned for courier routes are a Trek FX 2 and a Specialized Sirrus.
