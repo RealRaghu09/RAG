@@ -3,7 +3,7 @@ import json
 import numpy as np
 from collections import defaultdict
 from typing import List , Dict , Any 
-
+from sentence_transformers import CrossEncoder
 from Embeddings.embedder import Embedder
 
 class FaissRetriever:
@@ -100,3 +100,18 @@ def rank_documents(results):
 
     ranked_docs.sort(key=lambda x: x["score"], reverse=True)
     return ranked_docs
+
+
+def re_rank_cross_encoders(documents: list[str] , model : str = "cross-encoder/ms-marco-MiniLM-L-6-v2") -> tuple[str, list[int]]:
+    """Re-ranks documents using a cross-encoder model for more accurate relevance scoring.
+    """
+    relevant_text = ""
+    relevant_text_ids = []
+
+    encoder_model = CrossEncoder(model)
+    ranks = encoder_model.rank(prompt, documents, top_k=3)
+    for rank in ranks:
+        relevant_text += documents[rank["corpus_id"]]
+        relevant_text_ids.append(rank["corpus_id"])
+
+    return relevant_text, relevant_text_ids
