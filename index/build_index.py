@@ -67,7 +67,7 @@ def build_faiss_index(embeddings: np.ndarray) -> faiss.Index:
     return index
 
 
-def main() -> None:
+def main():
     repo_root = Path(__file__).resolve().parent.parent
     corpus_dir = repo_root / "corpus"
     out_dir = repo_root / "index_store"
@@ -93,5 +93,4 @@ def main() -> None:
     print(f"Wrote metadata to {meta_path}")
 
 
-if __name__ == "__main__":
-    main()
+# build index first later query and rerank it later 
